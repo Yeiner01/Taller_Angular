@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">Nombres</th>
+          <th class="h4">Canales</th>
+          <th class="h4">Temporadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (c of series; track c) {
+        <tr>
+          <td>
+            <dd>{{ c.nombre}}</dd>
+          </td>
+          <td>
+            <dd>{{ c.canal }}</dd>
+          </td>
+          <td>
+            <dd>{{ c.temporadas }}</dd>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
