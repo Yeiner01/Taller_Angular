@@ -10,18 +10,19 @@ import { SerieService } from '../serie.service';
   templateUrl: './serie-list.html',
   styleUrl: './serie-list.css',
 })
-export class SerieList  implements OnInit{
-  series: Array<Serie> =[];
+export class SerieList implements OnInit {
+  series: Array<Serie> = [];
 
-  constructor(private serieService: SerieService) {}
-   getSeriesList(){
-    (this.serieService as any).getSeries().subscribe((series: Serie[]) => {
-        this.series = series;
-      });
-        
-      }
+  constructor(private serieService: SerieService) { }
+  getSeriesList() {
+    this.serieService.getSeries().subscribe(series => {
+      console.log(series);
+      this.series = series;
+    });
+
+  }
   ngOnInit(): void {
     this.getSeriesList();
-     
+
   }
 }

@@ -12,14 +12,28 @@
         @for (c of series; track c) {
         <tr>
           <td>
-            <dd>{{ c.nombre}}</dd>
+            <dd>{{ c.id}}</dd>
           </td>
           <td>
-            <dd>{{ c.canal }}</dd>
+            <dd>{{ c.channel }}</dd>
           </td>
           <td>
-            <dd>{{ c.temporadas }}</dd>
+            <dd>{{ c.seasons }}</dd>
           </td>
+          <td>
+            <img [src]="c.poster" alt="Poster of {{ c.name }}" width="100">
+          </td>
+           <td>
+            <dd>{{ c.name }}</dd>
+          </td>
+
+        
+        
+          <td colspan="4">
+            <strong>Description:</strong> {{ c.description }}<br>
+            <strong>Webpage:</strong> <a [href]="c.webpage" target="_blank">{{ c.webpage }}</a>
+          </td>
+        
         </tr>
         }
       </tbody>
